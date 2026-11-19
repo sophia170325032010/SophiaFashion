@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sophia Fashion | Moda Feminina</title>
+
+    <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #DBBCB9;
+            color: #493943;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* CABEÇALHO */
+
+        header {
+            background-color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #8E6C7D;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #8E6C7D;
+            margin: 0 12px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #AF7C83;
+        }
+
+        /* BANNER PRINCIPAL */
+
+        .banner {
+            min-height: 480px;
+
+            background:
+                linear-gradient(
+                    rgba(50, 30, 40, 0.35),
+                    rgba(50, 30, 40, 0.35)
+                ),
+                url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600")
+                center/cover;
+
+            display: flex;
+            align-items: center;
+            padding: 60px 10%;
+            color: white;
+        }
+
+        .banner-content {
+            max-width: 520px;
+        }
+
+        .banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: #8E6C7D;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background-color: #AF7C83;
+        }
+
+        /* TÍTULOS DAS SEÇÕES */
+
+        .titulo {
+            text-align: center;
+            color: #8E6C7D;
+            font-size: 30px;
+            margin-bottom: 35px;
+        }
+
+        /* CATEGORIAS */
+
+        .categorias {
+            background-color: white;
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .categoria-lista {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .categoria {
+            background-color: #DBBCB9;
+            padding: 35px 15px;
+            border-radius: 10px;
+            color: #8E6C7D;
+            font-weight: bold;
+            font-size: 19px;
+            transition: 0.3s;
+        }
+
+        .categoria:hover {
+            transform: translateY(-5px);
+            background-color: #DFAF85;
+        }
+
+        /* PRODUTOS */
+
+        .produtos {
+            padding: 60px 8%;
+        }
+
+        .grade-produtos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .produto {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-5px);
+        }
+
+        .produto img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .produto h3 {
+            color: #8E6C7D;
+            margin: 15px 0 8px;
+        }
+
+        .produto p {
+            margin-bottom: 15px;
+        }
+
+        /* PROMOÇÕES */
+
+        .promocao {
+            background-color: #8E6C7D;
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .promocao h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .promocao p {
+            margin-bottom: 20px;
+        }
+
+        .promocao .botao {
+            background-color: #DFAF85;
+            color: #493943;
+        }
+
+        /* SOBRE A LOJA */
+
+        .sobre {
+            background-color: white;
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        .sobre h2 {
+            color: #8E6C7D;
+            margin-bottom: 20px;
+        }
+
+        .sobre p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* NEWSLETTER */
+
+        .newsletter {
+            text-align: center;
+            padding: 55px 20px;
+            background-color: #DBBCB9;
+        }
+
+        .newsletter h2 {
+            color: #8E6C7D;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+        }
+
+        .newsletter input {
+            padding: 13px;
+            width: 260px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .newsletter button {
+            padding: 13px 22px;
+            background-color: #8E6C7D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: #8E6C7D;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 10px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .banner h1 {
+                font-size: 35px;
+            }
+
+            .categoria-lista,
+            .grade-produtos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .categoria-lista,
+            .grade-produtos {
+                grid-template-columns: 1fr;
+            }
+
+            .banner h1 {
+                font-size: 30px;
+            }
+
+            .newsletter input {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="logo">
+            SOPHIA FASHION
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+
+    <section class="banner" id="inicio">
+
+        <div class="banner-content">
+
+            <h1>Seu estilo, sua essência.</h1>
+
+            <p>
+                Descubra uma coleção feita para mulheres
+                que amam beleza, elegância e personalidade.
+            </p>
+
+            <a href="#produtos" class="botao">
+                Conheça nossa coleção
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORIAS -->
+
+    <section class="categorias" id="categorias">
+
+        <h2 class="titulo">Explore nossas categorias</h2>
+
+        <div class="categoria-lista">
+
+            <div class="categoria">Vestidos</div>
+            <div class="categoria">Blusas</div>
+            <div class="categoria">Calças</div>
+            <div class="categoria">Saias</div>
+            <div class="categoria">Conjuntos</div>
+            <div class="categoria">Acessórios</div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUTOS -->
+
+    <section class="produtos" id="produtos">
+
+        <h2 class="titulo">Mais vendidos</h2>
+
+        <div class="grade-produtos">
+
+            <div class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600"
+                    alt="Vestido feminino elegante">
+
+                <h3>Vestido Elegance</h3>
+                <p>R$ 159,90</p>
+
+                <a href="#contato" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+            <div class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=600"
+                    alt="Blusa feminina">
+
+                <h3>Blusa Delicada</h3>
+                <p>R$ 89,90</p>
+
+                <a href="#contato" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+            <div class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600"
+                    alt="Calça feminina">
+
+                <h3>Calça Moderna</h3>
+                <p>R$ 129,90</p>
+
+                <a href="#contato" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+            <div class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600"
+                    alt="Saia feminina">
+
+                <h3>Saia Charmosa</h3>
+                <p>R$ 99,90</p>
+
+                <a href="#contato" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+            <div class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=600"
+                    alt="Conjunto feminino">
+
+                <h3>Conjunto Fashion</h3>
+                <p>R$ 189,90</p>
+
+                <a href="#contato" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+            <div class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600"
+                    alt="Acessório feminino">
+
+                <h3>Colar Elegance</h3>
+                <p>R$ 59,90</p>
+
+                <a href="#contato" class="botao">
+                    Comprar
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROMOÇÃO -->
+
+    <section class="promocao">
+
+        <h2>Uma coleção feita para você!</h2>
+
+        <p>
+            Aproveite nossas novidades e descubra
+            peças incríveis para renovar seu guarda-roupa.
+        </p>
+
+        <a href="#produtos" class="botao">
+            Ver coleção
+        </a>
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section class="sobre" id="sobre">
+
+        <h2 class="titulo">Sobre a Sophia Fashion</h2>
+
+        <p>
+            A Sophia Fashion nasceu para valorizar a beleza,
+            a autoestima e a personalidade de cada mulher.
+            Nossa missão é oferecer roupas modernas,
+            confortáveis e elegantes para todos os momentos.
+            Porque toda mulher merece se sentir especial!
+        </p>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter">
+
+        <h2>Receba nossas novidades!</h2>
+
+        <p>
+            Cadastre seu e-mail e fique por dentro
+            das novidades e promoções.
+        </p>
+
+        <form>
+
+            <input
+                type="email"
+                placeholder="Digite seu e-mail"
+                aria-label="Seu e-mail"
+                required>
+
+            <button type="submit">
+                Cadastrar
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- RODAPÉ -->
+
+    <footer id="contato">
+
+        <h2>SOPHIA FASHION</h2>
+
+        <p>Seu estilo, sua essência.</p>
+
+        <p>Instagram: @sophiafashion</p>
+
+        <p>Contato: contato@sophiafashion.com</p>
+
+        <p>
+            &copy; 2026 Sophia Fashion.
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+
